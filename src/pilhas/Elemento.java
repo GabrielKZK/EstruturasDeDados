@@ -18,12 +18,10 @@ public class Elemento {
 
     public void push(int vl){
         Elemento novo = new Elemento(vl);
-        if (isEmpty()){
-            topo = novo;
-        }else {
+        if (!isEmpty()) {
             novo.proximo = topo;
-            topo = novo;
         }
+        topo = novo;
     }
 
     public void pop(){
@@ -31,6 +29,23 @@ public class Elemento {
     }
     public int peek(){
         return topo.valor;
+    }
+    public String view() {
+        if (isEmpty()) {
+            return "";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        Elemento aux = topo;
+
+        while (aux != null) {
+            sb.append(aux.valor);
+           if(aux.proximo != null){
+               sb.append("-");
+           }
+           aux = aux.proximo;
+        }
+        return sb.toString();
     }
 
 }
