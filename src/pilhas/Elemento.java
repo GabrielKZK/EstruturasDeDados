@@ -25,9 +25,12 @@ public class Elemento {
     }
 
     public void pop(){
-        topo = topo.proximo;
+        if (!isEmpty())
+            topo = topo.proximo;
     }
     public int peek(){
+        if (isEmpty())
+            return 0;
         return topo.valor;
     }
     public String view() {
