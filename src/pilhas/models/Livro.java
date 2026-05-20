@@ -1,4 +1,4 @@
-package models;
+package pilhas.models;
 
 import lombok.*;
 
@@ -8,10 +8,13 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @ToString
-public class Livro {
 
+public class Livro {
     private String titulo;
     private int nrPaginas;
     private int anoLancamento;
+    public Livro proximo;
+
+
 
 }
